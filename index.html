@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAIM CAKEP ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle at top, #ff758c, #ff4d6d, #d6336c);
+    position:relative;
+}
+
+/* Glow background circles */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    filter:blur(120px);
+    animation: float 8s infinite alternate ease-in-out;
+}
+
+body::after{
+    right:-100px;
+    bottom:-100px;
+}
+
+@keyframes float{
+    from{ transform:translateY(-20px); }
+    to{ transform:translateY(20px); }
+}
+
+/* Glass Card */
+.card{
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    padding:50px 40px;
+    border-radius:30px;
+    text-align:center;
+    width:90%;
+    max-width:420px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.3);
+    color:white;
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(40px);}
+    to{ opacity:1; transform:translateY(0);}
+}
+
+h2{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    margin-bottom:15px;
+    text-shadow:0 0 20px rgba(255,255,255,0.8);
+}
+
+.typing{
+    min-height:40px;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+/* Luxury Button */
+button{
+    position:relative;
+    padding:12px 28px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff1744,#ff758c);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+    transform:skewX(-20deg);
+    transition:0.5s;
+}
+
+button:hover::before{
+    left:200%;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* Modal */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.2);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    animation:fadeUp 0.6s ease;
+}
+
+.modal-buttons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+
+/* Falling hearts */
+.heart{
+    position:absolute;
+    top:-10px;
+    font-size:18px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{ transform:translateY(110vh); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Happy Valentine ❤️</h2>
+    <div class="typing" id="typing"></div>
+    <button onclick="openModal()">Klik aku 💌</button>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3>Apakah kamu masih merasa bahagia denganku? 🥰</h3>
+        <div class="modal-buttons">
+            <button onclick="yesLove()">Iya ❤️</button>
+            <button onclick="closeModal()">Tidak ❤️</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+/* Typing Smooth */
+const text = " Jangan yang kaya begitu lah 💕";
+let i=0;
+function typeEffect(){
+    if(i<text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect,40);
+    }
+}
+typeEffect();
+
+/* Modal */
+function openModal(){
+    document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+/* YES */
+function yesLove(){
+    createConfetti();
+    document.querySelector(".modal-content").innerHTML=
+    "<h3>SAYANGKUU, Aku nggak pernah bosen, bahkan nggak akan pernah capek buat bilang terima kasih karena kamu sudah datang ke hidup aku. Kehadiran kamu itu bukan cuma sekadar “hadir”, tapi benar-benar mengubah semuanya jadi lebih berarti. Seperti yang pernah aku bilang, masa bersamamu adalah titik tertinggi dalam hidup yang pernah aku rasakan. Rasanya bahagia banget, sampai aku nggak percaya bisa seberuntung ini punya kamu. Memang sekarang hidup lagi diuji, lagi turun karena musibah… tapi aku nggak merasa sendirian. Karena aku punya kamu. Seorang wanita penyayang yang selalu ngerti keadaanku, yang nggak pernah pergi walau keadaan lagi nggak baik-baik aja. Dan itu yang bikin aku makin yakin… kamu bukan cuma pasangan, tapi rumah buat aku pulang. Yang paling luar biasa, kita dipertemukan di versi terbaik diri kita. Kita sama-sama belajar, sama-sama tumbuh, sama-sama berusaha jadi lebih baik. Dan aku percaya, kalau kita terus jalan bareng, saling pegang tangan, nggak ada yang nggak mungkin. Kita pasti bisa berkembang bersama. Aku benar-benar berharap kita bisa sampai ke jenjang yang lebih serius… sampai menikah, sampai tua, sampai semuanya. Karena sejujurnya, aku ngerasa cocok banget sama kamu. Nyaman banget. Kamu itu bukan cuma cantik dan manis… tapi kamu adalah duniaku, bahagiaku, dan alasan aku semangat setiap hari. I love you so much, sayangku. Cantikku. Manisku. Duniaku. Oh iya… aku punya sedikit surprise buat kamu. Tunggu yaa… semoga kamu suka 😘💖💕 ❤️</h3>";
+}
+
+/* Confetti Premium */
+function createConfetti(){
+    for(let i=0;i<150;i++){
+        const conf=document.createElement("div");
+        conf.style.position="fixed";
+        conf.style.width="8px";
+        conf.style.height="8px";
+        conf.style.background="hsl("+Math.random()*360+",100%,70%)";
+        conf.style.top="-10px";
+        conf.style.left=Math.random()*100+"vw";
+        conf.style.borderRadius="50%";
+        conf.style.animation="fall "+(Math.random()*3+2)+"s linear";
+        document.body.appendChild(conf);
+        setTimeout(()=>conf.remove(),4000);
+    }
+}
+
+/* Falling hearts */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
